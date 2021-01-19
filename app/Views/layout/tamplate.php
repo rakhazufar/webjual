@@ -31,12 +31,6 @@
                     <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn btn-outline-dark my-2 my-sm-0" type="submit">Search</button>
                 </form>
-
-                <div class="btn-group ml-3">
-                    <button type="button" class="btn btn-warning" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="fas fa-cart-plus"></i>
-                    </button>
-                </div>
             </div>
         </div>
     </nav>
@@ -51,7 +45,7 @@
 
     <!-- Footer -->
 
-    <footer class="page-footer bg-warning pt-4 mt-3" style="width:100%;">
+    <footer class="page-footer bg-warning pt-4 mt-3 <?= $fixed; ?>" style="width:100%;">
 
         <!-- Footer Links -->
         <div class="container-fluid text-center text-md-left">

@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\ProdukModel;
+use App\Models\Pesanan;
 
 /**
  * Class BaseController
@@ -47,8 +48,11 @@ class BaseController extends Controller
 	}
 
 	protected $allProduk;
+	protected $pesanan;
 	public function __construct()
 	{
 		$this->allProduk = new ProdukModel();
+
+		$this->pesanan = new Pesanan();
 	}
 }

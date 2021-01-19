@@ -10,9 +10,18 @@ class Pages extends BaseController
     {
 
         $data = [
-            'produk' => $this->allProduk->showProduk('Madu')
+            'produk' => $this->allProduk->showProduk('Madu'),
+            'fixed' => ''
         ];
         return view('index', $data);
+    }
+
+    public function none()
+    {
+        $data = [
+            'fixed' => 'fixed-bottom'
+        ];
+        return view('none', $data);
     }
     //--------------------------------------------------------------------
 

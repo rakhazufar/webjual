@@ -17,6 +17,7 @@
                                 <h5 class="card-title"><?= $a['nama']; ?></h5>
                                 <p class="text-danger"><strong> Rp. <?= $a['harga']; ?></strong></p>
                                 <p class="card-text"><?= $a['caption']; ?></p>
+                                <a class="btn btn-dark mt-2" href="pembayaran/index" role="button">Belanja</a>
                             </div>
                         </a>
                     </div>

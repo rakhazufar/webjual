@@ -9,7 +9,8 @@ class Kopi extends BaseController
     {
         $data = [
             'title' => 'Kopi',
-            'produk' => $this->allProduk->showProduk('Kopi')
+            'produk' => $this->allProduk->showProduk('Kopi'),
+            'fixed' => ''
         ];
 
         return view('kopi/index', $data);

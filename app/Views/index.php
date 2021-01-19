@@ -39,14 +39,13 @@
         <?php foreach ($produk as $a) : ?>
             <div class="col-md-3">
                 <div class="card">
-                    <a href="pembayaran/index/<?= $a['id']; ?>" style="text-decoration:none; color:black;">
-                        <img src="<?= $a['gambar']; ?>" class="card-img-top" alt="...">
-                        <div class="card-body bg-light">
-                            <h5 class="card-title"><?= $a['nama']; ?></h5>
-                            <p class="text-danger"><strong> Rp. <?= $a['harga']; ?></strong></p>
-                            <p class="card-text"><?= $a['caption']; ?></p>
-                        </div>
-                    </a>
+                    <img src="<?= $a['gambar']; ?>" class="card-img-top" alt="...">
+                    <div class="card-body bg-light">
+                        <h5 class="card-title"><?= $a['nama']; ?></h5>
+                        <p class="text-danger"><strong> Rp. <?= $a['harga']; ?></strong></p>
+                        <p class="card-text"><?= $a['caption']; ?></p>
+                        <a class="btn btn-dark" href="pembayaran/index" role="button">Belanja</a>
+                    </div>
                 </div>
             </div>
         <?php endforeach; ?>
