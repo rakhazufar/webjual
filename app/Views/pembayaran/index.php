@@ -11,7 +11,8 @@
                 <div class="form-group row">
                     <label for="inputNama" class="col-sm-2 col-form-label">Nama</label>
                     <div class="col-sm-10">
-                        <input type="Nama" class="form-control" id="inputNama" name="nama">
+                        <input type="Nama" class="form-control <?= ($validation->hasError('nama')) ? 'is-invalid' : ''; ?>" id="inputNama" name="nama">
+                        <div class="invalid-feedback"><?= $validation->getError('nama'); ?></div>
                     </div>
                 </div>
                 <div class="form-group row">
@@ -23,7 +24,8 @@
                 <div class="form-group row">
                     <label for="inputAlamat" class="col-sm-2 col-form-label">Alamat</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="inputAlamat" name="alamat">
+                        <input type="text" class="form-control  <?= ($validation->hasError('alamat')) ? 'is-invalid' : ''; ?>" id="inputAlamat" name="alamat">
+                        <div class="invalid-feedback"><?= $validation->getError('alamat'); ?></div>
                     </div>
                 </div>
                 <div class="form-inline ml-3">
@@ -35,7 +37,8 @@
                                 <option value="<?= $a['nama']; ?> | <?= $a['harga']; ?>"><?= $a['nama']; ?> (Rp. <?= $a['harga']; ?> )</option>
                             <?php endforeach; ?>
                         </select>
-                        <input type="text" class="form-control form-control-sm" id="colFormLabelSm" placeholder="Jumlah" name="jumlah1">
+                        <input type="text" class="form-control form-control-sm <?= ($validation->hasError('jumlah1')) ? 'is-invalid' : ''; ?>" id="colFormLabelSm" placeholder="Jumlah" name="jumlah1">
+                        <div class="invalid-feedback"><?= $validation->getError('jumlah1'); ?></div>
                     </div>
                 </div>
                 <div class="form-inline ml-3">

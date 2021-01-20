@@ -45,8 +45,8 @@ class BaseController extends Controller
 		//--------------------------------------------------------------------
 		// E.g.:
 		// $this->session = \Config\Services::session();
+		session();
 	}
-
 	protected $allProduk;
 	protected $pesanan;
 	public function __construct()

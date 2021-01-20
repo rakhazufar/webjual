@@ -9,7 +9,8 @@ class Pembayaran extends BaseController
     {
         $data = [
             'fixed' => '',
-            'produk' => $this->allProduk->findAll()
+            'produk' => $this->allProduk->findAll(),
+            'validation' => \Config\Services::validation()
         ];
         return view('pembayaran/index', $data);
     }
@@ -19,12 +20,30 @@ class Pembayaran extends BaseController
     {
         //validasi pemebelian
         if (!$this->validate([
-            'nama' => 'required',
-            'alamat' => 'required',
+            'nama' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} ini harus diisi.'
+                ]
+            ],
+            'alamat' =>
+            [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} ini harus diisi.'
+                ]
+            ],
             'pesanan1' => 'required',
-            'jumlah1' => 'required'
+            'jumlah1' =>
+            [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => 'Pesan Minimal 1 produk.'
+                ]
+            ],
         ])) {
-            return redirect()->to('/pembayaran/index');
+            $validation = \Config\Services::validation();
+            return redirect()->to('/pembayaran/index')->withInput()->with('validation', $validation);
         }
 
         if ($this->request->getVar('pesanan2') != "kosong") {
