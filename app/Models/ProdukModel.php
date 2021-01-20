@@ -13,4 +13,8 @@ class ProdukModel extends Model
     {
         return $this->where(['jenis' => $jenis])->findAll();
     }
+    public function showPesanan($pesanan)
+    {
+        return $this->where(['nama' => $pesanan])->findAll();
+    }
 }
