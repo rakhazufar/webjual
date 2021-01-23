@@ -24,9 +24,16 @@
                 <?php endif; ?>
             </ul>
 
-            <?php if ($pembelian['pesanan2'] && $pembelian['pesanan3'] != null) {
-                $total = (intval($pembelian['pesanan1'][1]) * $pembelian['jumlah1']) + (intval($pembelian['pesanan2'][1]) * $pembelian['jumlah2']) + (intval($pembelian['pesanan3'][1]) * $pembelian['jumlah3']);
-            } ?>
+            <?php if ($pembelian['pesanan2'] != null) {
+                if ($pembelian['pesanan3'] != null) {
+                    $total = (intval($pembelian['pesanan1'][1]) * $pembelian['jumlah1']) + (intval($pembelian['pesanan2'][1]) * $pembelian['jumlah2']) + (intval($pembelian['pesanan3'][1]) * $pembelian['jumlah3']);
+                } else {
+                    $total = (intval($pembelian['pesanan1'][1]) * $pembelian['jumlah1']) + (intval($pembelian['pesanan2'][1]) * $pembelian['jumlah2']);
+                }
+            } else {
+                $total = (intval($pembelian['pesanan1'][1]) * $pembelian['jumlah1']);
+            }
+            ?>
 
             <h5>Total = Rp. <?= $total; ?> </h5>
         </div>

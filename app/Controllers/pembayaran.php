@@ -87,7 +87,7 @@ class Pembayaran extends BaseController
             'jumlah3' => $this->request->getVar('jumlah3'),
         ]);
 
-        session()->setFlashdata('pesan', 'Pembelian berhasil. Pesanan anda telah tersimpan, silahkan kirim bukti pembayaran melalui whatsapp.');
+        session()->setFlashdata('pesan', 'Pembelian berhasil. Pesanan anda telah tersimpan. Anda dapat meninggalkan halaman ini, silahkan kirim bukti pembayaran melalui whatsapp.');
 
         return view('/pembayaran/selesai', $data);
     }

@@ -8,6 +8,7 @@
             <h3 class="mt-3">Form Belanja</h3>
             <p>Jika pembelian kurang dari 3, maka tidak perlu diisi seluruh daftar belanja.</p>
             <form action="/pembayaran/konfirmasi" method="post">
+                <?= csrf_field(); ?>
                 <div class="form-group row">
                     <label for="inputNama" class="col-sm-2 col-form-label">Nama</label>
                     <div class="col-sm-10">
@@ -69,7 +70,7 @@
 
                 <div class="form-group row">
                     <div class="col-sm-10">
-                        <button type="submit" class="btn btn-dark mt-3">Checkout</button>
+                        <button type="submit" class="btn btn-dark mt-3" onclick="return confirm('Apakah data pembelian sudah benar?')">Checkout</button>
                     </div>
                 </div>
             </form>
