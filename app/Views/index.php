@@ -12,13 +12,13 @@
     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="madu2.png" class="d-block w-100" alt="...">
+                <img src="<?= base_url('madu2.png'); ?>" class="d-block w-100" alt="...">
             </div>
             <div class="carousel-item">
-                <img src="madu3.png" class="d-block w-100" alt="...">
+                <img src="<?= base_url('madu3.png'); ?>" class="d-block w-100" alt="...">
             </div>
             <div class="carousel-item">
-                <img src="madu1.png" class="d-block w-100" alt="...">
+                <img src="<?= base_url('madu1.png'); ?>" class="d-block w-100" alt="...">
             </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -37,14 +37,18 @@
     <div class="row mx-auto">
 
         <?php foreach ($produk as $a) : ?>
+            <?php $gambar = $a['gambar']; ?>
             <div class="col-md-3">
                 <div class="card">
-                    <img src="<?= $a['gambar']; ?>" class="card-img-top" alt="...">
+                    <img src="<?= base_url($gambar); ?>" class="card-img-top" alt="...">
                     <div class="card-body bg-light">
                         <h5 class="card-title"><?= $a['nama']; ?></h5>
                         <p class="text-danger"><strong> Rp. <?= $a['harga']; ?></strong></p>
                         <p class="card-text"><?= $a['caption']; ?></p>
-                        <a class="btn btn-dark" href="pembayaran/index" role="button">Belanja</a>
+                        <form action="/Pesanan/semuaPesanan/<?= $a['id']; ?>" method="get">
+                            <input type="hidden" name="user" value="rakha">
+                            <button class="btn btn-dark" role="button">Belanja</button>
+                        </form>
                     </div>
                 </div>
             </div>
