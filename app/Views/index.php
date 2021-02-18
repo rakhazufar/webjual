@@ -45,10 +45,7 @@
                         <h5 class="card-title"><?= $a['nama']; ?></h5>
                         <p class="text-danger"><strong> Rp. <?= $a['harga']; ?></strong></p>
                         <p class="card-text"><?= $a['caption']; ?></p>
-                        <form action="/Pesanan/semuaPesanan/<?= $a['id']; ?>" method="get">
-                            <input type="hidden" name="user" value="rakha">
-                            <button class="btn btn-dark" role="button">Belanja</button>
-                        </form>
+                        <a href="<?= base_url('cart/buy/' . $a['id']) ?>" class="btn btn-dark">+ Keranjang</a>
                     </div>
                 </div>
             </div>

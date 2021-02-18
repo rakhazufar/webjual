@@ -27,7 +27,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
                 </ul>
-                <a href="/semuaPesanan/bayar" type="button" class="btn btn-outline-dark mx-3">Pembayaran</a>
+                <a href="<?= base_url('cart'); ?>" type="button" class="btn btn-outline-dark mx-3"><i class="fas fa-shopping-cart mr-2"></i>Keranjang</a>
             </div>
         </div>
     </nav>
@@ -36,9 +36,8 @@
         <?= $this->renderSection('content'); ?>
 
 
+
     </div>
-
-
 
     <!-- Footer -->
 
@@ -87,13 +86,12 @@
                 <div class="col-md-3 mb-md-0 mb-3">
 
                     <!-- Links -->
-                    <h5>Contact Us</h5>
+                    <h5>Hubungi Kami</h5>
 
                     <a class="btn btn-dark" href="https://wa.me/089639143290" role="button">Whatsapp</a>
 
                 </div>
                 <!-- Grid column -->
-
             </div>
             <!-- Grid row -->
 
