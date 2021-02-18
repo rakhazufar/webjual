@@ -7,6 +7,8 @@ use CodeIgniter\Model;
 class ProdukModel extends Model
 {
     protected $table = 'produk';
+    protected $primaryKey = 'id';
+    protected $allowedField = ['nama', 'gambar', 'harga', 'jenis', 'caption'];
 
 
     public function showProduk($jenis)
@@ -16,5 +18,9 @@ class ProdukModel extends Model
     public function showPesanan($pesanan)
     {
         return $this->where(['nama' => $pesanan])->findAll();
+    }
+    public function showPilihan($id)
+    {
+        return $this->where(['id' => $id])->findAll();
     }
 }
